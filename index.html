@@ -2,12 +2,151 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>Clock Using Pure JS</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
+  <style>
+#clockContainer{  
+    position: relative;
+    margin: auto;
+    height: 70vw;
+    width: 70vw; 
+    background: url(clock.png) no-repeat;
+    background-size: 100%;
+}
+
+#hour, #minute, #second{
+    position: absolute;
+    background: black;
+    border-radius: 10px; 
+    transform-origin: bottom;
+}
+#hour{
+    width: 1.8%;
+    height: 25%;
+    top: 25%;
+    left: 48.85%;
+    opacity: 0.8;  
+}
+#minute{
+    width: 1.6%;
+    height: 32%;
+    top: 19%;
+    left: 48.9%;
+    opacity: 0.8;  
+}
+#second{
+    width: 1%;
+    height: 40%;
+    top: 9%;
+    left: 49.25%;
+    opacity: 0.8; 
+    
+}
+#myclock{
+position: absolute;
+  border:5px solid blue;
+border-radius:100%;
+border-style:double;
+
+  background: transparent;
+  height:100%;
+  width:100%;
+  
+}
+    .number {
+      font-size:6vw;
+      position: absolute;
+      font-weight:bold;
+    }
+#center{
+  position: absolute ;
+  left:47%;
+  top:48%;
+height:3vw;
+  width:3vw;
+  background: black ;
+border-radius:100%;
+
+}
+#n12{
+  left:45%;
+}
+#n6{
+  left:45%;
+  bottom:0%;
+}
+#n3{
+  top:45%;
+  right:0%;
+}
+#n9{
+  top:45%;
+  left:0%;
+}
+#n1{
+  left:69%;
+  top:5%;
+}
+#n2{
+  left:88%;
+  top:20%;
+}
+#n4{
+  top:67%;
+  left:89%;
+}
+#n5{
+  top:85%;
+  left:69%;
+}
+#n7{
+  top:85%;
+  left:24%;
+}
+#n8{
+  top:67%;
+  left:8%;
+}
+#n10{
+  top:21%;
+  left:8%;
+}
+#n11{
+  top:5%;
+  left:23%;
+}
+  
+
+    </style>
+  <script>
+    setInterval(() => {
+    d = new Date();
+    htime = d.getHours();
+    mtime = d.getMinutes();
+    stime = d.getSeconds();
+    hrotation = 30*htime + mtime/2;
+    mrotation = 6*mtime;
+    srotation = 6*stime;
+
+    hour.style.transform = `rotate(${hrotation}deg)`;
+    minute.style.transform = `rotate(${mrotation}deg)`;
+    second.style.transform = `rotate(${srotation}deg)`;
+}, 1000);
+  </script>
 </head>
 <body>
-    <h1>This is heading</h1>
-    <H2>H2</H2>
+    <div id="clockContainer">
+      <div id="myclock">
+<div class="number"id="n12">12</div><div class="number"id="n1">1</div>
+<div class="number"id="n2">2</div><div class="number"id="n3">3</div><div class="number"id="n4">4</div><div class="number"id="n5">5</div><div class="number"id="n6">6</div><div class="number"id="n7">7</div><div class="number"id="n8">8</div><div class="number"id="n9">9</div><div class="number"id="n10">10</div><div class="number"id="n11">11</div>    <div id="center"> </div>
+
+      
+        <div id="hour"></div>
+        <div id="minute"></div>
+        <div id="second"></div>
+      </div>
+    </div>
 </body>
 </html>
